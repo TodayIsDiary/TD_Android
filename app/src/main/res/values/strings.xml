@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">TD_Android</string>
+    <string name="app_name">하루의 끝</string>
+    <string name="sign"><u>회원가입</u></string>
+    <string name="privacy"><u>개인정보 취급방침</u></string>
+    <string name="terms_use"><u>이용약관</u></string>
+    <string name="password_lost"><u>비밀번호를 잊어버렸어요.</u></string>
 </resources>
