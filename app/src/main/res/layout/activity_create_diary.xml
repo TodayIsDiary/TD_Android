@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView33"
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -28,9 +28,7 @@
                 android:fontFamily="@font/cafe24oneprettynight"
                 android:text="20XX년 XX월 XX일 (X)"
                 android:textColor="@color/white"
-                android:textSize="17sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/textView34"
@@ -41,22 +39,34 @@
                 android:fontFamily="@font/cafe24oneprettynight"
                 android:text="감정"
                 android:textColor="@color/white"
-                android:textSize="11sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView33" />
+                android:textSize="11sp" />
 
-            <TextView
-                android:id="@+id/textView36"
+
+            <LinearLayout
+                android:id="@+id/categoryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="6dp"
-                android:fontFamily="@font/cafe24oneprettynight"
-                android:text="감정"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView34" />
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/categoryText"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cafe24oneprettynight"
+                    android:text="기쁨"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="6dp"
+                    app:srcCompat="@drawable/ic_underbar" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView37"
@@ -67,12 +77,10 @@
                 android:fontFamily="@font/cafe24oneprettynight"
                 android:text="제목"
                 android:textColor="@color/white"
-                android:textSize="11sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView36" />
+                android:textSize="11sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName7"
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -80,41 +88,45 @@
                 android:backgroundTint="@color/white"
                 android:ems="10"
                 android:fontFamily="@font/cafe24oneprettynight"
-                android:inputType="textPersonName"
-                android:text="제목"
-                android:textColor="#B3FFFFFF"
-                android:textSize="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView37" />
+                android:hint="제목"
+                android:inputType="textMultiLine"
+                android:scrollHorizontally="false"
+                android:textColor="@color/white"
+                android:textColorHint="#B3FFFFFF"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/imageUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="21dp" />
 
             <TextView
                 android:id="@+id/textView38"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="43dp"
+                android:layout_marginTop="22dp"
                 android:fontFamily="@font/cafe24oneprettynight"
                 android:text="내용"
                 android:textColor="@color/white"
-                android:textSize="11sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+                android:textSize="11sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName8"
+                android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:ems="10"
                 android:fontFamily="@font/cafe24oneprettynight"
-                android:inputType="textPersonName"
-                android:text="오늘 하루를 다른 사람들과 공유해 보아요."
-                android:textColor="#B3FFFFFF"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView38" />
+                android:hint="오늘 하루를 다른 사람들과 공유해 보아요."
+                android:inputType="textMultiLine"
+                android:scrollHorizontally="false"
+                android:textColor="@color/white"
+                android:textColorHint="#B3FFFFFF"
+                android:textSize="15sp" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -130,34 +142,37 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageView6"
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginBottom="10.5dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="0.5dp"
         android:background="@color/background"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_image" />
 
     <ImageButton
-        android:id="@+id/imageView7"
+        android:id="@+id/clockButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21.5dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginStart="11.5dp"
+        android:layout_marginBottom="1dp"
         android:background="@color/background"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:srcCompat="@drawable/ic_watch" />
 
     <ImageButton
-        android:id="@+id/imageView8"
+        android:id="@+id/checkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="21.67dp"
-        android:layout_marginBottom="13.67dp"
+        android:layout_marginEnd="11.67dp"
+        android:layout_marginBottom="3.67dp"
         android:background="@color/background"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_check" />
