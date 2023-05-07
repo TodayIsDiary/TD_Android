@@ -8,4 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#00000000</color>
+    <color name="profile_default">#80545454</color>
+    <color name="button_default">#40FFFFFF</color>
+    <color name="status_bar">#804E4E4E</color>
+    <color name="indicator_color">#FF6C1FD3</color>
+    <color name="green">#FF58FF4A</color>
+    <color name="red">#FFFF4A4A</color>
+    <color name="blue">#FF3366FF</color>
 </resources>
