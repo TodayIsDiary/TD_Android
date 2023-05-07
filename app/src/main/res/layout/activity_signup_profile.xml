@@ -30,23 +30,25 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <com.google.android.material.imageview.ShapeableImageView
+        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize50p"
+        android:id="@+id/imageUrl1"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginTop="73dp"
-        android:background="@drawable/profile_image"
+        android:background="@color/profile_default"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageUrl2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/background"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageUrl1"
+        app:layout_constraintEnd_toEndOf="@+id/imageUrl1"
         app:srcCompat="@drawable/ic_camera" />
 
     <TextView
@@ -60,10 +62,10 @@
         android:textColor="@color/white"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageUrl1" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/nickName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -89,10 +91,10 @@
         android:textColor="@color/white"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/nickName" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/sexSwitch"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginHorizontal="30dp"
@@ -119,10 +121,10 @@
         android:textColor="@color/white"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/sexSwitch" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/introduction"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -130,7 +132,8 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:fontFamily="@font/cafe24oneprettynight"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
         android:textColor="@color/white"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,7 +151,7 @@
         android:textColor="@color/white"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/introduction" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -157,7 +160,7 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="30dp"
         android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/finishButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -207,7 +210,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button5"
+        android:id="@+id/finishButton"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginHorizontal="30dp"
