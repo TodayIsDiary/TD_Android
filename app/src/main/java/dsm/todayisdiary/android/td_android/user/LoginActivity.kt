@@ -1,4 +1,4 @@
-package dsm.todayisdiary.android.td_android
+package dsm.todayisdiary.android.td_android.user
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +7,10 @@ import android.util.Log
 import android.widget.Toast
 import dsm.todayisdiary.android.td_android.data.RetrofitBuilder
 import dsm.todayisdiary.android.td_android.data.request.user.UserLoginRequest
-import dsm.todayisdiary.android.td_android.data.response.UserLoginResponse
+import dsm.todayisdiary.android.td_android.data.response.user.UserLoginResponse
+import dsm.todayisdiary.android.td_android.data.util.MyApplication
 import dsm.todayisdiary.android.td_android.databinding.ActivityLoginBinding
+import dsm.todayisdiary.android.td_android.diary.HomeActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,10 +45,17 @@ class LoginActivity : AppCompatActivity() {
                     response: Response<UserLoginResponse>
                 ) {
                     if (response.isSuccessful) {
-                        Log.d("성공", response.body()!!.toString())
-                        startActivity(Intent(this@LoginActivity, MainActivity::class.java));
+                        val accessToken = response.body()?.accessToken
+                        val refreshToken = response.body()?.refreshToken
+                        MyApplication.prefs.setString("atk", "$accessToken")
+                        MyApplication.prefs.setString("rtk", "$refreshToken")
+                        Log.d(
+                            "Token",
+                            "atk : ${MyApplication.prefs.getString("atk", "")
+                            } \nrtk : ${MyApplication.prefs.getString("rtk", "")}"
+                        )
+                        startActivity(Intent(this@LoginActivity, HomeActivity::class.java));
                         finish()
-
                     } else {
                         Log.d("실패", "실패")
                         Toast.makeText(
@@ -58,7 +67,5 @@ class LoginActivity : AppCompatActivity() {
                 }
             })
         }
-
     }
-
 }
