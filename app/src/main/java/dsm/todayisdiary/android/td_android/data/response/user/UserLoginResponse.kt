@@ -1,4 +1,4 @@
-package dsm.todayisdiary.android.td_android.data.response
+package dsm.todayisdiary.android.td_android.data.response.user
 
 import com.google.gson.annotations.SerializedName
 
