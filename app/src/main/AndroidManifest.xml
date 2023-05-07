@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".data.util.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -18,17 +19,41 @@
         android:theme="@style/Theme.TD_Android"
         tools:targetApi="31">
         <activity
-            android:name=".SignUpProfileActivity"
-            android:exported="false" />
+            android:name=".diary.PostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".SignUpActivity"
-            android:exported="false" />
+            android:name=".diary.CreateDiaryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
+            android:name=".diary.HomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".user.SignUpProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.SignUpCodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.SignUpEmailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.SignUpActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,5 +65,6 @@
                 android:value="" />
         </activity>
     </application>
+
 
 </manifest>
