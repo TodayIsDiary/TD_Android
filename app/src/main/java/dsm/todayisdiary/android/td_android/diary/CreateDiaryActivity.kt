@@ -99,6 +99,7 @@ class CreateDiaryActivity : AppCompatActivity() {
                     }
                 }
             })
+            finish()
         }
     }
 }

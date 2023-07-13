@@ -1,13 +1,11 @@
 package dsm.todayisdiary.android.td_android.diary
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import dsm.todayisdiary.android.td_android.data.RetrofitBuilder
@@ -16,7 +14,6 @@ import dsm.todayisdiary.android.td_android.data.response.diary.DiaryDetailRespon
 import dsm.todayisdiary.android.td_android.data.response.diary.DiaryLatestResponse
 import dsm.todayisdiary.android.td_android.data.util.RecyclerViewAdapter
 import dsm.todayisdiary.android.td_android.databinding.FragmentHomeLatestBinding
-import dsm.todayisdiary.android.td_android.user.SignUpEmailActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,8 +32,16 @@ class HomeLatestFragment : Fragment() {
 
         loadData()
         detailDiary()
+        refresh()
 
         return binding.root
+    }
+
+    fun refresh() {
+        binding.refresh.setOnRefreshListener {
+            loadData()
+            binding.refresh.isRefreshing = false
+        }
     }
 
     private fun detailDiary() {

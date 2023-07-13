@@ -29,7 +29,7 @@ class SignUpProfileActivity : AppCompatActivity() {
         val accountID = intent.getStringExtra("account_id")
         val password = intent.getStringExtra("password")
         val email = intent.getStringExtra("email")
-        var imageUrl: String? = null
+        val imageUrl: String? = null
         var sex = SexType.FEMALE
 
         binding.imageUrl1.setOnClickListener {

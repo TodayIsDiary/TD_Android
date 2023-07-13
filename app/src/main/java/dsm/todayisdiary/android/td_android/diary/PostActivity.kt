@@ -1,13 +1,8 @@
 package dsm.todayisdiary.android.td_android.diary
 
 import dsm.todayisdiary.android.td_android.databinding.ActivityPostBinding
-import dsm.todayisdiary.android.td_android.user.LoginActivity
-import dsm.todayisdiary.android.td_android.user.SignUpActivity
-
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.core.view.marginTop
 import com.bumptech.glide.Glide
 
@@ -32,7 +27,15 @@ class PostActivity : AppCompatActivity() {
 
         binding.title.text = title
         binding.content.text = content
-        binding.category.text = category
+        if (category == "HAPPY") {
+            binding.category.text = "기쁨"
+        } else if (category == "SAD") {
+            binding.category.text = "슬픔"
+        } else if (category == "ANGRY") {
+            binding.category.text = "화남"
+        } else if (category == "SURPRISE") {
+            binding.category.text = "놀람"
+        }
         binding.boardTime.text = boardTime
         binding.writer.text = writer
         binding.heart.text = heart.toString()
@@ -41,7 +44,7 @@ class PostActivity : AppCompatActivity() {
             Glide.with(binding.imageUrl)
                 .load(imageUrl)
                 .into(binding.imageUrl)
-            binding.imageUrl.marginTop.plus(30)
+            binding.content.marginTop.plus(30)
         }
         Glide.with(binding.writerProfile)
             .load(writerProfile)
@@ -49,6 +52,8 @@ class PostActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        Log.d("margin", "${binding.imageUrl.marginTop}")
+        binding.menuButton.setOnClickListener {
+
+        }
     }
 }

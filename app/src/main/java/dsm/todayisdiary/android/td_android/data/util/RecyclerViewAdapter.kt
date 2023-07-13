@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Glide.init
+import dsm.todayisdiary.android.td_android.data.enums.CategoryType
 import dsm.todayisdiary.android.td_android.data.response.diary.Diary
 import dsm.todayisdiary.android.td_android.databinding.ItemListBinding
 
@@ -37,7 +38,15 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerVie
                 .load(diary.writerProfile)
                 .into(binding.profile)
             binding.title.text = diary.title
-            binding.category.text = diary.category
+            if (diary.category == "HAPPY") {
+                binding.category.text = "기쁨"
+            } else if (diary.category == "SAD") {
+                binding.category.text = "슬픔"
+            } else if (diary.category == "ANGRY") {
+                binding.category.text = "화남"
+            } else if (diary.category == "SURPRISE") {
+                binding.category.text = "놀람"
+            }
             binding.time.text = diary.data
             binding.view.text = diary.view.toString()
             binding.comment.text = diary.commentCount.toString()

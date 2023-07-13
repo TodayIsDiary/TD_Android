@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import dsm.todayisdiary.android.td_android.data.util.ViewPagerAdapter
 import dsm.todayisdiary.android.td_android.databinding.ActivityHomeBinding
+import dsm.todayisdiary.android.td_android.user.ProfileMyActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -47,6 +48,7 @@ class HomeActivity : AppCompatActivity() {
 
 
         binding.profile.setOnClickListener {
+            startActivity(Intent(this, ProfileMyActivity::class.java))
         }
 
         binding.createDiary.setOnClickListener {

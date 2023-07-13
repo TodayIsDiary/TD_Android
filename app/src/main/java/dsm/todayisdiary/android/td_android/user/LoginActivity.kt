@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         val retrofitBuilder = RetrofitBuilder
 
-        binding.loginButtonLogin.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             Log.d(
                 "id, pw",
                 "\nid ${binding.accountIdLogin.text.toString()} \npw ${binding.passwordLogin.text.toString()}"
@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
                 override fun onResponse(
                     call: Call<UserLoginResponse>,
                     response: Response<UserLoginResponse>
-                ) {
+                ) { 
                     if (response.isSuccessful) {
                         val accessToken = response.body()?.accessToken
                         val refreshToken = response.body()?.refreshToken

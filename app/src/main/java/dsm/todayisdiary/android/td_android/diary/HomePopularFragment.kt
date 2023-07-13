@@ -32,9 +32,18 @@ class HomePopularFragment : Fragment() {
 
         loadData()
         detailDiary()
+        refresh()
 
         return binding.root
     }
+
+    fun refresh() {
+        binding.refresh.setOnRefreshListener {
+            loadData()
+            binding.refresh.isRefreshing = false
+        }
+    }
+
 
     private fun detailDiary() {
         adapter.itemClickListener = object : RecyclerViewAdapter.OnItemClickListener {
